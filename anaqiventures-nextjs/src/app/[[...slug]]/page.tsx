@@ -30,9 +30,8 @@ export default async function StaticPage({ params }: { params: Promise<{ slug?: 
           dangerouslySetInnerHTML={{ __html: json }}
         />
       ))}
-      <div dangerouslySetInnerHTML={{ __html: page.body }} />
+      <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: page.body }} />
       <SiteRuntime route={page.route} />
     </>
   );
 }
-
