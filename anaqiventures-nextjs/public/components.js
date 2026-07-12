@@ -19,11 +19,11 @@ function loadComponents(root = '') {
   const navEl = document.getElementById('main-nav');
   if (navEl) navEl.innerHTML = `
     <div class="wrap nav-in">
-      <a class="logo-img" href="${root}index.html">
+      <a class="logo-img" href="/">
         <img src="${BASE}anaqi-ventures-logo.png" alt="Anaqi Ventures" height="38">
       </a>
       <ul class="nmenu">
-        <li id="n-home"><a href="${root}index.html">Utama</a></li>
+        <li id="n-home"><a href="/">Utama</a></li>
         <li id="n-servis">
           <button>Servis <span class="caret">▾</span></button>
           <div class="drop">
@@ -42,7 +42,7 @@ function loadComponents(root = '') {
           </div>
         </li>
         <li id="n-tips"><a href="${root}tips.html">Tips & Panduan</a></li>
-        <li id="n-portfolio"><a href="${root}index.html#portfolio">Portfolio</a></li>
+        <li id="n-portfolio"><a href="/#portfolio">Portfolio</a></li>
         <li id="n-hubungi"><a href="${root}hubungi.html">Hubungi</a></li>
       </ul>
       <div class="nav-act">
@@ -57,7 +57,7 @@ function loadComponents(root = '') {
   /* ── MOBILE MENU ── */
   const mob = document.getElementById('mmenu');
   if (mob) mob.innerHTML = `
-    <a class="mob-a" href="${root}index.html">🏠 Utama</a>
+    <a class="mob-a" href="/">🏠 Utama</a>
     <span class="mob-a" onclick="toggleSub('ms1')">⚡ Servis ▾</span>
     <div class="mob-sub" id="ms1">
       <a href="${root}servis/upgrade-meter.html">⚡ Upgrade Meter 3 Fasa</a>
@@ -65,7 +65,7 @@ function loadComponents(root = '') {
       <a href="${root}servis/bekalan-sementara.html">🏗️ Bekalan / Meter Sementara</a>
     </div>
     <a class="mob-a" href="${root}tips.html">💡 Tips & Panduan</a>
-    <a class="mob-a" href="${root}index.html#portfolio">📸 Portfolio</a>
+    <a class="mob-a" href="/#portfolio">📸 Portfolio</a>
     <a class="mob-a" href="${root}hubungi.html">📞 Hubungi Kami</a>
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
       <a href="${WA}" class="btn btn-w btn-bl" target="_blank">💬 WhatsApp Kami</a>
@@ -222,7 +222,7 @@ function loadComponents(root = '') {
     <div class="wrap">
       <div class="fgrid">
         <div class="fbrand">
-          <a class="logo-img" href="${root}index.html" style="display:inline-block;margin-bottom:4px">
+          <a class="logo-img" href="/" style="display:inline-block;margin-bottom:4px">
             <img src="${BASE}anaqi-ventures-logo.png" alt="Anaqi Ventures" height="52" style="display:block">
           </a>
           <p>Kontraktor elektrik di Lembah Klang. Fokus utama pada upgrade meter TNB ke 3 fasa untuk rumah kediaman dan premis perniagaan. Turut urus meter masuk baru dan bekalan sementara tapak projek.</p>
@@ -239,9 +239,9 @@ function loadComponents(root = '') {
         <div class="fcol">
           <h5>Pautan</h5>
           <ul>
-            <li><a href="${root}index.html">Utama</a></li>
+            <li><a href="/">Utama</a></li>
             <li><a href="${root}tips.html">Tips & Panduan</a></li>
-            <li><a href="${root}index.html#portfolio">Portfolio Projek</a></li>
+            <li><a href="/#portfolio">Portfolio Projek</a></li>
             <li><a href="${root}servis/upgrade-meter.html#faq">Soalan Lazim (FAQ)</a></li>
             <li><a href="${root}hubungi.html">Hubungi Kami</a></li>
           </ul>

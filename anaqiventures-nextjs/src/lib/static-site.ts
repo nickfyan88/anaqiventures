@@ -114,7 +114,11 @@ function toMetadata(head: string): Metadata {
 function stripRuntimeScripts(body: string) {
   return body
     .replace(/<script\b[^>]*src=["'][^"']*(components|main)\.js["'][\s\S]*?<\/script>/gi, "")
-    .replace(/<script>\s*loadComponents\(['"][^'"]*['"]\);\s*<\/script>/gi, "");
+    .replace(/<script>\s*loadComponents\(['"][^'"]*['"]\);\s*<\/script>/gi, "")
+    .replaceAll('href="../index.html#', 'href="/#')
+    .replaceAll('href="../index.html"', 'href="/"')
+    .replaceAll('href="index.html#', 'href="/#')
+    .replaceAll('href="index.html"', 'href="/"');
 }
 
 export function getPageBySlug(slug?: string[]): StaticPage | null {
