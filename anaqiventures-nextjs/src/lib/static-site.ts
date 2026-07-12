@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Metadata } from "next";
 
-const contentRoot = path.join(process.cwd(), "src/content/static");
+const currentFile = fileURLToPath(import.meta.url);
+const projectRoot = path.resolve(path.dirname(currentFile), "../..");
+const contentRoot = path.join(projectRoot, "src/content/static");
 const siteUrl = "https://anaqiventures.com.my";
 
 export type StaticPage = {
@@ -41,6 +44,13 @@ export function getStaticRoutes() {
       filePath,
     }))
     .sort((a, b) => a.route.localeCompare(b.route));
+}
+
+export function getPageByRoute(route: string): StaticPage | null {
+  const routeMatch = getStaticRoutes().find((item) => item.route === route);
+  if (!routeMatch) return null;
+
+  return readStaticPage(routeMatch.route, routeMatch.filePath);
 }
 
 function slugToRoute(slug?: string[]) {
@@ -126,13 +136,17 @@ export function getPageBySlug(slug?: string[]): StaticPage | null {
   const routeMatch = getStaticRoutes().find((item) => item.route === route);
   if (!routeMatch) return null;
 
-  const html = fs.readFileSync(routeMatch.filePath, "utf8");
+  return readStaticPage(route, routeMatch.filePath);
+}
+
+function readStaticPage(route: string, filePath: string): StaticPage {
+  const html = fs.readFileSync(filePath, "utf8");
   const head = extractFirst(html, /<head>([\s\S]*?)<\/head>/i) ?? "";
   const rawBody = extractFirst(html, /<body>([\s\S]*?)<\/body>/i) ?? "";
 
   return {
     route,
-    filePath: routeMatch.filePath,
+    filePath,
     html,
     body: stripRuntimeScripts(rawBody),
     inlineStyles: Array.from(head.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)).map(
