@@ -287,4 +287,4 @@ function loadComponents(root = '') {
     if (fn && path.endsWith(fn)) a.classList.add('cur');
   });
 }
-</content>
+window.loadComponents = loadComponents;
