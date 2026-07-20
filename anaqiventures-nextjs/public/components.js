@@ -19,11 +19,11 @@ function loadComponents(root = '') {
   const navEl = document.getElementById('main-nav');
   if (navEl) navEl.innerHTML = `
     <div class="wrap nav-in">
-      <a class="logo-img" href="${root}index.html">
+      <a class="logo-img" href="/">
         <img src="${BASE}anaqi-ventures-logo.png" alt="Anaqi Ventures" height="38">
       </a>
       <ul class="nmenu">
-        <li id="n-home"><a href="${root}index.html">Utama</a></li>
+        <li id="n-home"><a href="/">Utama</a></li>
         <li id="n-servis">
           <button>Servis <span class="caret">▾</span></button>
           <div class="drop">
@@ -42,7 +42,7 @@ function loadComponents(root = '') {
           </div>
         </li>
         <li id="n-tips"><a href="${root}tips.html">Tips & Panduan</a></li>
-        <li id="n-portfolio"><a href="${root}index.html#portfolio">Portfolio</a></li>
+        <li id="n-portfolio"><a href="/#portfolio">Portfolio</a></li>
         <li id="n-hubungi"><a href="${root}hubungi.html">Hubungi</a></li>
       </ul>
       <div class="nav-act">
@@ -57,7 +57,7 @@ function loadComponents(root = '') {
   /* ── MOBILE MENU ── */
   const mob = document.getElementById('mmenu');
   if (mob) mob.innerHTML = `
-    <a class="mob-a" href="${root}index.html">🏠 Utama</a>
+    <a class="mob-a" href="/">🏠 Utama</a>
     <span class="mob-a" onclick="toggleSub('ms1')">⚡ Servis ▾</span>
     <div class="mob-sub" id="ms1">
       <a href="${root}servis/upgrade-meter.html">⚡ Upgrade Meter 3 Fasa</a>
@@ -65,7 +65,7 @@ function loadComponents(root = '') {
       <a href="${root}servis/bekalan-sementara.html">🏗️ Bekalan / Meter Sementara</a>
     </div>
     <a class="mob-a" href="${root}tips.html">💡 Tips & Panduan</a>
-    <a class="mob-a" href="${root}index.html#portfolio">📸 Portfolio</a>
+    <a class="mob-a" href="/#portfolio">📸 Portfolio</a>
     <a class="mob-a" href="${root}hubungi.html">📞 Hubungi Kami</a>
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
       <a href="${WA}" class="btn btn-w btn-bl" target="_blank">💬 WhatsApp Kami</a>
@@ -97,17 +97,17 @@ function loadComponents(root = '') {
   const portfolio = document.getElementById('section-portfolio');
   if (portfolio) {
     const photos = [
-      { img: `${BASE}Porfolio/permohonan-kabel-underground-3-fasa-rumah-banglo-selangor.jpeg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Permohonan 3 Fasa Underground — Rumah Banglo, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-meter-3-fasa-premis-komersial-selangor.jpeg`,        badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Meter 3 Fasa — Premis Kedai, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-db-3-fasa-pvc-45way-subang-jaya.jpeg`,              badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan DB 3 Fasa PVC 45-Way — Subang Jaya' },
-      { img: `${BASE}Porfolio/pemasangan-box-ev-charger-shah-alam-selangor.jpeg`,            badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Box EV Charger — Shah Alam, Selangor' },
-      { img: `${BASE}Porfolio/penyambungan-busbar-cutout-lot-kedai-rawang-selangor.jpeg`,    badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Penyambungan Busbar ke Cutout — Lot Kedai, Rawang' },
+      { img: `${BASE}Porfolio/pemasangan-kabel-underground-3-fasa-jenjarom-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Kabel Underground 3 Fasa — Jenjarom, Selangor' },
+      { img: `${BASE}Porfolio/pemasangan-panel-meter-3-fasa-rumah-kediaman-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Panel Meter 3 Fasa — Rumah Kediaman, Selangor' },
+      { img: `${BASE}Porfolio/pemasangan-db-board-pvc-45way-upgrade-3-fasa-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan DB Board PVC 45-Way — Selangor' },
+      { img: `${BASE}Porfolio/pemasangan-papan-meter-3-fasa-lobi-rumah-selangor.jpeg`,       badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Papan Meter 3 Fasa — Rumah, Selangor' },
+      { img: `${BASE}Porfolio/penyambungan-busbar-cutout-lot-kedai-komersial-selangor.jpeg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Penyambungan Busbar ke Cutout — Lot Kedai Komersial' },
       { img: `${BASE}Porfolio/pemasangan-cutout-board-upgrade-3-fasa-banglo-subang-jaya.jpeg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Cutout Board — Banglo, Subang Jaya' },
       { img: `${BASE}Porfolio/upgrade-meter-3-fasa-rumah-teres-sepang-selangor.jpeg`,        badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Upgrade Meter 3 Fasa — Rumah Teres, Sepang' },
       { img: `${BASE}Porfolio/siap-pendawaian-unit-kondominium-kuala-lumpur.jpeg`,           badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Siap Pendawaian & Lampu — Unit Kondominium, KL' },
-      { img: `${BASE}Porfolio/permohonan-meter-baharu-fasa-1-selangor.jpeg`,                  badge: '🆕 Meter Baru',              caption: 'Permohonan Meter Baharu 1 Fasa — Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-box-cutout-meter-lot-kedai-selangor.jpeg`,           badge: '🆕 Meter Baru',              caption: 'Pemasangan Box Cut-Out Meter — Lot Kedai, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-box-meter-sementara-bangi-selangor.jpeg`,            badge: '🏗️ Bekalan Sementara',       caption: 'Pemasangan Box Meter Sementara — Bangi, Selangor' },
+      { img: `${BASE}Porfolio/permohonan-meter-baharu-banglo-rumah-2-selangor.jpeg`,          badge: '🆕 Meter Baru',              caption: 'Permohonan Meter Baharu — Banglo Rumah Baru' },
+      { img: `${BASE}Porfolio/pemasangan-meter-baharu-banglo-close-up-selangor.jpeg`,         badge: '🆕 Meter Baru',              caption: 'Pemasangan Meter Baharu — Close-Up' },
+      { img: `${BASE}Porfolio/pemasangan-box-meter-sementara-bangi-selangor-2.jpeg`,          badge: '🏗️ Bekalan Sementara',       caption: 'Pemasangan Box Meter Sementara — Bangi, Selangor' },
       { img: `${BASE}Porfolio/pemasangan-box-meter-3-fasa-tiang-tnb-selangor-3.jpeg`,         badge: '🏗️ Bekalan Sementara',       caption: 'Box Meter Sementara 3 Fasa — Siap Dipasang' },
     ];
 
@@ -222,7 +222,7 @@ function loadComponents(root = '') {
     <div class="wrap">
       <div class="fgrid">
         <div class="fbrand">
-          <a class="logo-img" href="${root}index.html" style="display:inline-block;margin-bottom:4px">
+          <a class="logo-img" href="/" style="display:inline-block;margin-bottom:4px">
             <img src="${BASE}anaqi-ventures-logo.png" alt="Anaqi Ventures" height="52" style="display:block">
           </a>
           <p>Kontraktor elektrik di Lembah Klang. Fokus utama pada upgrade meter TNB ke 3 fasa untuk rumah kediaman dan premis perniagaan. Turut urus meter masuk baru dan bekalan sementara tapak projek.</p>
@@ -239,9 +239,9 @@ function loadComponents(root = '') {
         <div class="fcol">
           <h5>Pautan</h5>
           <ul>
-            <li><a href="${root}index.html">Utama</a></li>
+            <li><a href="/">Utama</a></li>
             <li><a href="${root}tips.html">Tips & Panduan</a></li>
-            <li><a href="${root}index.html#portfolio">Portfolio Projek</a></li>
+            <li><a href="/#portfolio">Portfolio Projek</a></li>
             <li><a href="${root}servis/upgrade-meter.html#faq">Soalan Lazim (FAQ)</a></li>
             <li><a href="${root}hubungi.html">Hubungi Kami</a></li>
           </ul>

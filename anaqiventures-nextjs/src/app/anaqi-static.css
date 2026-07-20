@@ -878,3 +878,264 @@ footer { background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%); border-t
 @media(max-width:768px){
   .sov-grid,.why-grid,.tgrid{grid-template-columns:1fr}
 }
+
+/* Mobile refresh: tighter, shorter homepage flow without changing core content. */
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+
+  nav {
+    top: 0;
+  }
+
+  .nav-in {
+    min-height: 58px;
+  }
+
+  .logo-img img {
+    max-height: 34px;
+    width: auto;
+  }
+
+  .mob {
+    top: 58px;
+    padding: 14px 20px 22px;
+  }
+
+  .mob-a {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: auto;
+    background-size: 30px 30px;
+  }
+
+  .hero-inner {
+    padding: 34px 0 38px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  .hbadges {
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 1.02;
+    margin-bottom: 12px;
+  }
+
+  .hdesc {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+
+  .hcta .btn {
+    flex: 1 1 150px;
+    justify-content: center;
+  }
+
+  .hstats {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 22px;
+  }
+
+  .hstat {
+    padding: 12px 8px;
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .hstat:last-child {
+    border-right: 0;
+  }
+
+  .hstat-n {
+    font-size: 21px;
+  }
+
+  .hstat-l {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .hero-proof::before,
+  .hero-mini {
+    display: none;
+  }
+
+  .hero-photo {
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero-photo img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero-photo-label {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .hero-photo-label span {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .hero-photo-label strong {
+    font-size: 16px;
+  }
+
+  .trust .trow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 14px 0;
+  }
+
+  .ti {
+    font-size: 13px;
+  }
+
+  .sec,
+  #section-portfolio,
+  #section-kawasan,
+  #section-tips-preview {
+    padding: 44px 0;
+  }
+
+  .h2 {
+    font-size: clamp(24px, 7vw, 32px);
+    line-height: 1.08;
+    margin-bottom: 10px;
+  }
+
+  .sub {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hl-grid,
+  .sov-grid,
+  .why-pts,
+  .steps,
+  .tgrid,
+  .port-grid,
+  .tips-grid {
+    margin-top: 26px;
+  }
+
+  .hl-card,
+  .sov,
+  .cov-box,
+  .tc {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+
+  .hl-card img {
+    height: 140px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hl-list {
+    margin-bottom: 18px;
+  }
+
+  .sov-ico {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .why-grid {
+    gap: 28px;
+  }
+
+  .wp {
+    gap: 10px;
+  }
+
+  .wp-ico {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    text-align: left;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .sn {
+    width: 42px;
+    height: 42px;
+    margin: 0;
+  }
+
+  .step p {
+    margin: 0;
+  }
+
+  #px-kata-pelanggan .tc:nth-of-type(n+3),
+  #section-portfolio .port-card:nth-child(n+7),
+  #section-kawasan .kaw-map,
+  #section-tips-preview .tip-card-home:nth-child(n+3) {
+    display: none;
+  }
+
+  .parallax-divider {
+    height: 190px;
+  }
+
+  .parallax-divider-content p {
+    display: none;
+  }
+
+  .kaw-grid {
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .kaw-tags {
+    gap: 8px;
+  }
+
+  .kaw-tag {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .cta-sec {
+    padding: 48px 0;
+  }
+
+  .cta-sec p {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .cta-btns {
+    flex-direction: column;
+  }
+
+  .cta-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
