@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anaqiventures.com.my/sitemap.xml

@@ -46,7 +46,7 @@ function loadComponents(root = '') {
         <li id="n-hubungi"><a href="${root}hubungi.html">Hubungi</a></li>
       </ul>
       <div class="nav-act">
-        <a href="tel:+60146388440" class="btn btn-g btn-sm">📞 Call</a>
+        <a href="tel:+60146388440" class="btn btn-g btn-sm" aria-label="Call Anaqi Ventures">📞 Call</a>
       </div>
       <div class="ham" onclick="toggleMob()">
         <span></span><span></span><span></span>
@@ -68,7 +68,7 @@ function loadComponents(root = '') {
     <a class="mob-a" href="/#portfolio">📸 Portfolio</a>
     <a class="mob-a" href="${root}hubungi.html">📞 Hubungi Kami</a>
     <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
-      <a href="${WA}" class="btn btn-w btn-bl" target="_blank">💬 WhatsApp Kami</a>
+      <a href="${WA}" class="btn btn-w btn-bl" target="_blank" rel="noopener">💬 WhatsApp Kami</a>
       <a href="tel:+60146388440" class="btn btn-g btn-bl">📞 +60146388440</a>
     </div>
   `;
@@ -88,7 +88,7 @@ function loadComponents(root = '') {
       <div style="font-size:28px;margin-bottom:8px">💬</div>
       <h5>Sebutharga Percuma</h5>
       <p>Harga telus, tiada hidden cost. Respond dalam masa 1 jam.</p>
-      <a href="${WA}" class="btn btn-w btn-bl btn-sm" target="_blank">💬 WhatsApp Kami</a>
+      <a href="${WA}" class="btn btn-w btn-bl btn-sm" target="_blank" rel="noopener">💬 WhatsApp Kami</a>
       <a href="tel:+60146388440" class="btn btn-g btn-bl btn-sm" style="margin-top:8px">📞 +60146388440</a>
     </div>
   `;
@@ -97,25 +97,33 @@ function loadComponents(root = '') {
   const portfolio = document.getElementById('section-portfolio');
   if (portfolio) {
     const photos = [
-      { img: `${BASE}Porfolio/pemasangan-kabel-underground-3-fasa-jenjarom-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Kabel Underground 3 Fasa — Jenjarom, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-panel-meter-3-fasa-rumah-kediaman-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Panel Meter 3 Fasa — Rumah Kediaman, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-db-board-pvc-45way-upgrade-3-fasa-selangor.jpeg`,   badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan DB Board PVC 45-Way — Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-papan-meter-3-fasa-lobi-rumah-selangor.jpeg`,       badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Papan Meter 3 Fasa — Rumah, Selangor' },
-      { img: `${BASE}Porfolio/penyambungan-busbar-cutout-lot-kedai-komersial-selangor.jpeg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Penyambungan Busbar ke Cutout — Lot Kedai Komersial' },
-      { img: `${BASE}Porfolio/pemasangan-cutout-board-upgrade-3-fasa-banglo-subang-jaya.jpeg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Pemasangan Cutout Board — Banglo, Subang Jaya' },
-      { img: `${BASE}Porfolio/upgrade-meter-3-fasa-rumah-teres-sepang-selangor.jpeg`,        badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Upgrade Meter 3 Fasa — Rumah Teres, Sepang' },
-      { img: `${BASE}Porfolio/siap-pendawaian-unit-kondominium-kuala-lumpur.jpeg`,           badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Siap Pendawaian & Lampu — Unit Kondominium, KL' },
-      { img: `${BASE}Porfolio/permohonan-meter-baharu-banglo-rumah-2-selangor.jpeg`,          badge: '🆕 Meter Baru',              caption: 'Permohonan Meter Baharu — Banglo Rumah Baru' },
-      { img: `${BASE}Porfolio/pemasangan-meter-baharu-banglo-close-up-selangor.jpeg`,         badge: '🆕 Meter Baru',              caption: 'Pemasangan Meter Baharu — Close-Up' },
-      { img: `${BASE}Porfolio/pemasangan-box-meter-sementara-bangi-selangor-2.jpeg`,          badge: '🏗️ Bekalan Sementara',       caption: 'Pemasangan Box Meter Sementara — Bangi, Selangor' },
-      { img: `${BASE}Porfolio/pemasangan-box-meter-3-fasa-tiang-tnb-selangor-3.jpeg`,         badge: '🏗️ Bekalan Sementara',       caption: 'Box Meter Sementara 3 Fasa — Siap Dipasang' },
+      { img: `${BASE}Porfolio/pemasangan-panel-meter-3-fasa-rumah-kediaman-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Panel meter 3 fasa untuk rumah kediaman' },
+      { img: `${BASE}Porfolio/pemasangan-db-board-pvc-45way-upgrade-3-fasa-selangor.jpg`, badge: '🔧 Kerja Elektrik', caption: 'DB board 45-way untuk naik taraf 3 fasa' },
+      { img: `${BASE}Porfolio/pemasangan-kabel-underground-3-fasa-jenjarom-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Kabel underground 3 fasa di tapak kerja' },
+      { img: `${BASE}Porfolio/pemasangan-box-meter-sementara-bangi-selangor-2.jpg`, badge: '🏗️ Bekalan Sementara', caption: 'Box meter sementara untuk tapak projek' },
+      { img: `${BASE}Porfolio/permohonan-meter-baharu-banglo-rumah-2-selangor.jpg`, badge: '🆕 Meter Baru', caption: 'Permohonan meter baharu untuk rumah baru' },
+      { img: `${BASE}Porfolio/pemasangan-cutout-board-upgrade-3-fasa-banglo-subang-jaya.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Cutout board untuk kerja upgrade 3 fasa' },
+      { img: `${BASE}Porfolio/pemasangan-panel-meter-kedai-komersial-proses-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Kerja panel meter untuk premis komersial' },
+      { img: `${BASE}Porfolio/pemasangan-box-meter-kedai-3-fasa-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Box meter 3 fasa untuk kedai' },
+      { img: `${BASE}Porfolio/pemasangan-meter-baharu-banglo-close-up-selangor.jpg`, badge: '🆕 Meter Baru', caption: 'Pemasangan meter baharu' },
+      { img: `${BASE}Porfolio/pemasangan-meter-sementara-tiang-tapak-projek-selangor.jpg`, badge: '🏗️ Bekalan Sementara', caption: 'Meter sementara atas tiang tapak projek' },
+      { img: `${BASE}Porfolio/penyambungan-busbar-cutout-lot-kedai-komersial-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Penyambungan busbar untuk lot kedai' },
+      { img: `${BASE}Porfolio/pendawaian-unit-kondominium-kuala-lumpur.jpg`, badge: '🔧 Kerja Elektrik', caption: 'Kerja pendawaian unit kondominium' },
+      { img: `${BASE}Porfolio/siap-pendawaian-unit-kondominium-kuala-lumpur.jpg`, badge: '🔧 Kerja Elektrik', caption: 'Pendawaian dan lampu siap dipasang' },
+      { img: `${BASE}Porfolio/pegawai-tnb-site-visit-upgrade-3-fasa-rumah-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Site visit berkaitan upgrade 3 fasa' },
+      { img: `${BASE}Porfolio/upgrade-meter-3-fasa-rumah-teres-sepang-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Upgrade meter 3 fasa rumah teres' },
+      { img: `${BASE}Porfolio/pemasangan-panel-db-board-siap-selangor.jpg`, badge: '🔧 Kerja Elektrik', caption: 'Panel DB board siap dipasang' },
+      { img: `${BASE}Porfolio/pemasangan-db-board-label-litar-kemas-selangor.jpg`, badge: '🔧 Kerja Elektrik', caption: 'Label litar DB board yang lebih kemas' },
+      { img: `${BASE}Porfolio/pemasangan-box-meter-luar-kedai-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Box meter luar kedai' },
+      { img: `${BASE}Porfolio/pemasangan-busbar-terminal-3-fasa-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Busbar terminal 3 fasa' },
+      { img: `${BASE}Porfolio/riser-box-meter-kondominium-selangor.jpg`, badge: '⚡ Upgrade Meter 3 Fasa', caption: 'Riser box meter kondominium' },
     ];
 
     portfolio.innerHTML = `
       <div class="wrap">
-        <span class="eye reveal">Portfolio Projek Kami</span>
-        <h2 class="h2 reveal">Projek Yang Telah Kami Siapkan</h2>
-        <p class="sub reveal">Sebahagian daripada projek elektrik yang telah kami laksanakan dengan jayanya di seluruh Selangor dan Kuala Lumpur — kemas, selamat dan profesional.</p>
+        <span class="eye reveal">Kerja Di Lapangan</span>
+        <h2 class="h2 reveal">Contoh kerja yang pelanggan boleh lihat</h2>
+        <p class="sub reveal">Gambar sebenar daripada set portfolio Anaqi Ventures: kerja meter, panel, DB board dan bekalan sementara.</p>
         <div class="port-grid reveal-group">
           ${photos.map(p => `
             <div class="port-card">
@@ -249,11 +257,11 @@ function loadComponents(root = '') {
         <div class="fcol">
           <h5>Ikuti Kami</h5>
           <ul class="fsocial">
-            <li><a href="https://www.facebook.com/anaqiventure" target="_blank">
+            <li><a href="https://www.facebook.com/anaqiventure" target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" style="width:18px;height:18px;flex-shrink:0"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.58v1.9h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94"/></svg>
               Facebook
             </a></li>
-            <li><a href="https://www.tiktok.com/@anaqiventuresupgrademete" target="_blank">
+            <li><a href="https://www.tiktok.com/@anaqiventuresupgrademete" target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" style="width:18px;height:18px;flex-shrink:0"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.05-2.05c-.2-.34-.35-.71-.43-1.1h-3.13v13.34a2.36 2.36 0 0 1-4.2 1.5 2.36 2.36 0 0 1 1.66-4 2.4 2.4 0 0 1 .7.1V10.4a5.5 5.5 0 0 0-.7-.05A5.53 5.53 0 0 0 2 15.88a5.53 5.53 0 0 0 9.42 3.92 5.5 5.5 0 0 0 1.6-3.92V9.34a7.27 7.27 0 0 0 4.24 1.36V7.5a4.28 4.28 0 0 1-.66-1.68"/></svg>
               TikTok
             </a></li>
