@@ -1,7 +1,0 @@
-{
-  "redirects": [
-    { "source": "/servis/upgrade-meter.html", "destination": "/servis.html#upgrade-3-fasa", "permanent": true },
-    { "source": "/servis/meter-baru.html", "destination": "/servis.html#meter-baru", "permanent": true },
-    { "source": "/servis/bekalan-sementara.html", "destination": "/servis.html#bekalan-sementara", "permanent": true }
-  ]
-}
